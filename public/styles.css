@@ -1,9 +1,6 @@
-#listen {
-    margin: auto;
-    display: block;
-    margin-top: 50%;
-}
-#tadaah {
-    margin: auto;
-    display: block;
+#status {
+    font: message-box;
+    font-size: xx-large;
+    text-align: center;
+    margin-top: 20%
 }
