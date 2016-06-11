@@ -2,11 +2,12 @@
 
 let recognition = new webkitSpeechRecognition();
 
-document.getElementById('listen').addEventListener('click', function() {
-    recognition.start();
-});
+recognition.start();
 
 recognition.onresult = function(result) {
     result = result.results[0][0];
-    document.getElementById('tadaah').innerText = `I am ${result.confidence.toFixed(2)}% sure that you said: \"${result.transcript}\"`;
+    let echo = `I am ${Math.round(result.confidence*100)}% sure that you said: ${result.transcript}`;
+    let spokenEcho = new SpeechSynthesisUtterance(echo);
+    spokenEcho.lang = 'en-US';
+    window.speechSynthesis.speak(spokenEcho);
 };
